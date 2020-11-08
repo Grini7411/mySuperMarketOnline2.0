@@ -1,0 +1,21 @@
+<mdb-card>
+    <!--Card image-->
+    <mdb-card-img [src]="prod.pic_url" alt="Card image cap"></mdb-card-img>
+    <!--Card content-->
+    <mdb-card-body>
+  
+      <!--Title-->
+      <mdb-card-title>
+        <h5>{{prod.name}}</h5>
+      </mdb-card-title>
+  
+      <!--Text-->
+      <mdb-card-text> Price: {{prod.price | currency:'ILS'}}</mdb-card-text>
+      <!-- cart add or delete -->
+      <button class="inc btn-primary" (click)="toggleQuantityProd(ev)" mat-button #ev>+</button> 
+      <button class="dec" (click)="toggleQuantityProd(de)" mat-button #de>-</button>
+      <!-- only if admin is logged: -->
+      <button *ngIf="userType === 2" mdbutton class="btndanger" (click)="deleteProd()">Del</button>
+    </mdb-card-body>
+  </mdb-card>
+  

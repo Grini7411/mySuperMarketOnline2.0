@@ -1,0 +1,24 @@
+<table mdbTable hover="true">
+        <thead>
+          <tr>
+            <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol *ngFor="let order of allOrders">
+            <th scope="row">{{order.id_order}}</th>
+            <td>{{order.first_name}}</td>
+            <td>{{order.last_name}}</td>
+            <td>{{order.city}}</td>
+            <td>{{order.street}}</td>
+            <td>{{order.delivery_date | date:'dd/MM/yyyy'}}</td>
+            <td>{{order.order_date | date:'dd/MM/yyyy'}}</td>
+            <td>{{order.final_price | currency:'ILS'}}</td>
+            <td><button (click)="deleteOrder(order.id_order)">X</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <button mdbutton (click)="gotoCockpit()">Back to Cockpit</button>
+      

@@ -1,0 +1,53 @@
+
+
+
+
+<h1 style="text-align:center">New User</h1>
+<hr/>
+<form class="text-center border border-light p-5" [formGroup]="addUserAdminForm" (ngSubmit)="save()" >
+        
+    <div class="form-row">
+        <div class="col">
+            <input type="text" mdbInput class="form-control" formControlName="firstName" placeholder="First Name" >
+        </div>
+        <div class="col">
+            <input type="text" mdbInput class="form-control" formControlName="lastName" placeholder="Last Name">
+        </div>
+    
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <input type="text" mdbInput class="form-control" formControlName="idNum" placeholder="ID number">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+                <select class="browser-default custom-select" formControlName="city">
+                    <option value="">--choose City--</option>
+                    <option [value]="city.name" *ngFor="let city of allCity">{{city.name}}</option>
+                </select>
+         </div>
+        <div class="col">
+            <input type="text" mdbInput class="form-control" formControlName="street" placeholder="street">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col"><input type="text" class="form-control" mdbInput formControlName="email" placeholder="email"></div>
+        <div class="col"><input type="text" class="form-control" mdbInput formControlName="password" placeholder="password">
+        </div>
+        <div class="col">
+            <select class="browser-default custom-select" formControlName="userType">
+                <option value="choose">Choose one</option>
+                <option [value]="type.id" *ngFor="let type of allTypes">{{type.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-row"><button class="btn btn-primary" type="submit">Save!</button>
+    <button class="btn btn-secondary" (click)="backToCockpit()">Back to Cockpit</button>
+    </div>
+</form>
+
+
+
+

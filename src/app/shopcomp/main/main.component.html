@@ -1,0 +1,24 @@
+<div class="container">
+    <!-- Header Bar -->
+
+
+    <div class="row" id="header-main">
+            <div class="md-form ">
+                    <input [(ngModel)]="searchWord" type="text" id="formBg1" class="form-control" mdbInput>
+                    <label for="formBg1">Serach for Product</label>
+            </div>
+    </div>
+    
+    <div class="row">
+        <!-- Cart Bar -->
+        <div class="col-md-4"><app-mycart [currentCartID]="currentCartID" [userID]="userID"></app-mycart></div>
+        <!-- Product Bar -->
+        <div class="col-md-8">
+            <app-allproduct [searchWord]="searchWord" [currentCartID]="currentCartID"></app-allproduct>
+        </div>
+    </div>
+    <div>
+        <button mdbutton color="danger" (click)="gotoHome()">Back to HomePage</button>
+    </div>
+</div>
+      

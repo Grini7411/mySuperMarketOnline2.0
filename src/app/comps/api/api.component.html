@@ -1,0 +1,46 @@
+<style type="text/css">
+	table.tableizer-table {
+		font-size: 12px;
+		border: 1px solid #CCC; 
+		font-family: Arial, Helvetica, sans-serif;
+	} 
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid #CCC;
+	}
+	.tableizer-table th {
+		background-color: #104E8B; 
+		color: #FFF;
+		font-weight: bold;
+	}
+</style>
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Description</th><th>Methods/Path</th><th>Request/Response</th></tr></thead><tbody>
+ <tr><td>Get all cities</td><td>GET smo/allcity</td><td>&nbsp;</td></tr>
+ <tr><td>Get Joined prods and cart units</td><td>GET smo/joinprodunits/:cart_id</td><td>&nbsp;</td></tr>
+ <tr><td>Get cart units</td><td>smo/getcartunits/:cart_id</td><td>&nbsp;</td></tr>
+ <tr><td>Get all Products by searchword and/or by category</td><td>smo/getproducts</td><td>&nbsp;</td></tr>
+ <tr><td>Get all categories</td><td>smo/getcat</td><td>&nbsp;</td></tr>
+ <tr><td>Delete Product from DB</td><td>Del smo/del/:id</td><td>req: id_prod</td></tr>
+ <tr><td>Add product to DB</td><td>Post smo/addprod</td><td>req: prod</td></tr>
+ <tr><td>Chek if the user has open cart</td><td>Get smo/checkcart/:id</td><td>&nbsp;</td></tr>
+ <tr><td>Create new cart on DB</td><td>Post smo/newcart</td><td>"req:userID,time;res: msg, cartID"</td></tr>
+ <tr><td>Chek if Specific item inside cart</td><td>Get smo/checkitemincart/:id_prod/:cart_id</td><td>"req: prodID,cartID; res: if exist -quantity; else - action and quantity:0"</td></tr>
+ <tr><td>Add new item to cart</td><td>Post smo/newcartitem</td><td>"req: prod_id,quantity,gen_price,cart_id ;res:msg"</td></tr>
+ <tr><td>update a specific item in cart</td><td>Put smo/updatecartitem/:cart_id</td><td>"req: cart_id,quantity,id_prod,genPrice; res:msg"</td></tr>
+ <tr><td>Clear all items in current cart</td><td>Del smo/clearcart/:cartID</td><td>req: cart_id</td></tr>
+ <tr><td>Delet a specific unit from current cart</td><td>Del smo/delcartunit/:unitID</td><td>&nbsp;</td></tr>
+ <tr><td>Add a new order to DB</td><td>Post smo/neworder</td><td>&nbsp;</td></tr>
+ <tr><td>Get all the orders from db</td><td>Get smo/allorders</td><td>&nbsp;</td></tr>
+ <tr><td>Delete a specific order by its id</td><td>Del smo/delorder/:id</td><td>&nbsp;</td></tr>
+ <tr><td>Get a specific cart info from DB</td><td>Get smo/getcart/:id</td><td>&nbsp;</td></tr>
+ <tr><td>Get All the users</td><td>Get smousers/getallusers'</td><td>&nbsp;</td></tr>
+ <tr><td>Get all user types (roles)</td><td>Get smousers/getusertypes</td><td>&nbsp;</td></tr>
+ <tr><td>Login Request</td><td>Post smousers/login</td><td>"req: firstName, lastName, email, password, city, role, id_num, street</td></tr>
+ <tr><td>res: success:bol, userConnected:obj, isConnected:bol"</td></tr>
+ <tr><td>Create new user </td><td>Post smousers/adduser</td><td>"req: firstName, lastName, email, password, city, role, id_num, street; res:msg"</td></tr>
+ <tr><td>Check if user is connected</td><td>Get smousers/checkuser</td><td>&nbsp;</td></tr>
+ <tr><td>Delete user by id</td><td>Delete smousers/deluser/:id</td><td>&nbsp;</td></tr>
+ <tr><td>Log out from account</td><td>Getsmousers/logout</td><td></td></tr>
+</tbody></table>

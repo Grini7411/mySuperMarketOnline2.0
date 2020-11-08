@@ -1,0 +1,9 @@
+
+
+
+<div id="user">Hello {{username}}
+    <a *ngIf="isConnected===false" routerLink="/login" routerLinkActive="active" class="nav-link waves-light" mdbWavesEffect>Login</a>
+    <button *ngIf="isConnected===true"  class="waves-light" (click)="logout()" mdbWavesEffect>log-out <i class="fas fa-sign-out-alt"></i></button>
+</div>
+
+<!-- <router-outlet></router-outlet> -->

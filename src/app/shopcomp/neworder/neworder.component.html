@@ -1,0 +1,31 @@
+<div class="order">
+<div >
+  <h3>Ok, {{clientFullName}}, this is your Order summery </h3>
+  <div></div>
+</div>
+<h4>We Just want you to add those small detailes:</h4>
+<form  [formGroup]="orderForm" (ngSubmit)="save()">
+  <div class="md-form form-sm">
+    <input mdbInput id="street" class="form-control form-control-sm" type="text" formControlName="street" >
+    <label for="street">Street</label>
+  </div>
+      <div class="">
+      <input mdbInput id="deliv" class="form-control" type="date" formControlName="deliveryDate" placeholder="delivery date">
+      <label for="deliv">Delivery Date</label>
+    </div>
+      <select class="browser-default custom-select" formControlName="city">
+        <option value="">----choose City----</option>
+        <option [value]="city.name" *ngFor="let city of allCity">{{city.name}}</option>
+      </select>
+      <!-- <input type="text" formControlName="orderDate" placeholder="order date" value=""> -->
+      <input type="text" (input)="creditCardChanged()" formControlName="creditCard" placeholder="credit Card"> <span *ngIf=""><i class="fab fa-cc-visa"></i></span>
+
+      <br/>
+      <br/>
+      <button mdbBtn  gradient="blue" rounded="true" mdbWavesEffect type="submit">Submit Order!</button>
+      <button mdbBtn type="button" color="danger" mdbWavesEffect (click)="cancelOrder()">Cancel Order</button>
+      <div><button mdbBtn type="button" color="blue-grey"  (click)="backToCart()" mdbWavesEffect>Edit Your Order</button>
+      </div>
+</form>
+</div>
+<router-outlet></router-outlet>

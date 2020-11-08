@@ -1,0 +1,56 @@
+<!-- Default form login -->
+<form class="text-center border border-light p-5" class="form_add" [formGroup]="addUserForm" (ngSubmit)="save()" >
+
+    <p class="h4 mb-4">Register</p>
+
+
+    <input  formControlName="firstName" placeholder="first name" class="form-control mb-4">
+    <input type="text" formControlName="lastName" placeholder="last name" class="form-control mb-4">
+    <input type="text" formControlName="idNum" placeholder="id number" class="form-control mb-4">
+    <input type="text" formControlName="street" placeholder="street">
+    <select formControlName="city">
+        <option value="">---Choose City---</option>
+        <option *ngFor="let city of allCity" [value]="city.id_city">{{city.name}}</option>
+    </select>
+
+    <!-- Email -->
+    <input formControlName="email" type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+    <!-- Password -->
+    <input formControlName="password" type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+
+    <div class="d-flex justify-content-around">
+        <div>
+            <!-- Remember me -->
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign in button -->
+    <div>
+        <button class="btn btn-info btn-block my-4" type="submit">Register</button>
+        <button class="btn btn-info btn-block my-4">Cancel</button>
+    </div>
+    <!-- Register -->
+
+    <!-- Social login -->
+    <p>or sign in with:</p>
+
+    <a type="button" class="light-blue-text mx-2">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+        <i class="fab fa-twitter"></i>
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+        <i class="fab fa-github"></i>
+    </a>
+
+</form>
+<!-- Default form login -->

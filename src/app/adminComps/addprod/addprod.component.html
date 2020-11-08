@@ -1,0 +1,24 @@
+
+<div mdbModal class=" modal modal-content ">
+  <button type="button" class="close pull-right fade " aria-label="Close" (click)="addFormModalRef.hide()">
+    <span aria-hidden="true">×</span>
+  </button>
+  <h4 class="modal-title w-100" id="myModalLabel">Add New Product</h4>
+</div>
+
+<div class="modal-header ">
+
+  <div class="modal-body">
+      <input type="text" [(ngModel)]="name" placeholder="product name"><br/>
+      <select [(ngModel)]="category" class="browser-default custom-select">
+          <option value="">---choose category---</option>
+          <option *ngFor="let category of allCategories" [value]="category.id_cat">{{category.name}}</option>
+      </select><br/>
+    <input type="number" [(ngModel)]="price" placeholder="price" ><br/>
+    <button id="upload_widget" class="cloudinary-button">Upload files</button><br/>
+  </div>
+  <div class="modal-footer">
+    <button mdbBtn color="secondary" (click)="saveProd()">Save!</button>
+    <button mdbBtn color="danger" (click)="addFormModalRef.hide()">Cancel</button>
+  </div>
+</div>

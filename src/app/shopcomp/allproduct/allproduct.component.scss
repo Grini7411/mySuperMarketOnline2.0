@@ -1,0 +1,18 @@
+li{
+   margin-right: 10px;
+//    border-right: 1px groove black;
+   
+}
+ul{
+    width: 120%;
+}
+
+li:hover{
+    background-color: rgb(247, 239, 8);
+    color: white;
+}
+#all{
+    overflow-y: scroll;
+    height: 500px;
+
+}

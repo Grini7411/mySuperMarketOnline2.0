@@ -1,0 +1,15 @@
+<div class="container">
+
+<div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+                <ul class="nav nav-tabs">
+                        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><button type="button" mdbBtn color="link" (click)="filterCategory(null)" >All Categories</button></li>
+                        <li role="presentation" *ngFor="let category of allCategories"><button type="button" mdbBtn color="link" (click)="filterCategory(category.id_cat)">{{category.name}}</button></li>
+                </ul>
+                <hr/>
+        </div>
+</div >        
+        <div id="all">
+                <app-product *ngFor="let product of allProducts"  [prod]="product" [currentCartID]="currentCartID"></app-product>
+        </div>
+</div>

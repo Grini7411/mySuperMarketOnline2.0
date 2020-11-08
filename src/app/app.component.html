@@ -1,0 +1,44 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand" [routerLink]="routeDirection">MySupermarketOnline</a></mdb-navbar-brand>
+
+    <!-- Collapsible content -->
+    <links>
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <button type="button" [disabled]="!userConnected" (click)="gotoHome()">Home <i class="fas fa-home"></i></button>
+            </li>
+            <li class="nav-item">
+                
+            </li>
+            <li class="nav-item">
+                <a  [routerLink]="['shopping/api']" class="nav-link waves-light" mdbWavesEffect>API</a>
+            </li>
+
+        </ul>
+        <!-- Links -->
+
+<!-- Search form -->
+        <app-userstatus></app-userstatus>
+    </links>
+    <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
+
+
+
+
+<!-- <app-login></app-login> -->
+<!-- <app-adduser></app-adduser> -->
+
+<router-outlet></router-outlet>
+
+
+
+
+    
